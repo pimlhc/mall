@@ -119,6 +119,6 @@
             <!--                </configuration>-->
             <!--            </plugin>-->
         </plugins>
-        <finalName>mall-user</finalName>
+        <finalName>mall-shipping</finalName>
     </build>
 </project>

@@ -13,9 +13,13 @@ spec:
     metadata:
       labels:
         app: mall-cart
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mallcart"
+        dapr.io/app-port: "9003"
     spec:
       containers:
-      - image: pimdarpacr.azurecr.io/mall-cart
+      - image: pimdarpacr.azurecr.io/mall-cart:v3.0
         name: mall-cart
         imagePullPolicy: Always
         ports:

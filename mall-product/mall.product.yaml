@@ -13,9 +13,13 @@ spec:
     metadata:
       labels:
         app: mall-product
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mallproduct"
+        dapr.io/app-port: "9002"
     spec:
       containers:
-      - image: pimdarpacr.azurecr.io/mall-product:v1
+      - image: pimdarpacr.azurecr.io/mall-product:v3.0
         name: mall-product
         ports:
         - containerPort: 9002

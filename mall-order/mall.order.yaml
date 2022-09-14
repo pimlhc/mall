@@ -13,9 +13,13 @@ spec:
     metadata:
       labels:
         app: mall-order
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mallorder"
+        dapr.io/app-port: "9005"     
     spec:
       containers:
-      - image: pimdarpacr.azurecr.io/mall-order:v1
+      - image: pimdarpacr.azurecr.io/mall-order:v3.0
         name: mall-order
         ports:
         - containerPort: 9005

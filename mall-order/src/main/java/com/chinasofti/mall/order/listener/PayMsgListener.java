@@ -10,8 +10,8 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
-@Slf4j
+//@Component
+//@Slf4j
 public class PayMsgListener {
 
     @Autowired
@@ -19,14 +19,11 @@ public class PayMsgListener {
 
 
     //收到微信的通知，修改订单状态
-//    @RabbitHandler
     @RabbitListener(queues = "order.queue")
     public void process(String ordreNo){
-        log.info("接收到消息{}",ordreNo);
-//
+       // log.info("接收到消息{}",ordreNo);
         Order order = orderMapper.selectByOrderNo(Long.valueOf(ordreNo));
         order.setStatus(OrderStatus.SUCCESS.getCode());
         orderMapper.updateByPrimaryKeySelective(order);
-
     }
 }

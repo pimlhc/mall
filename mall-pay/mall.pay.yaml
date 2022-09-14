@@ -13,9 +13,13 @@ spec:
     metadata:
       labels:
         app: mall-pay
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "mallpay"
+        dapr.io/app-port: "9006"
     spec:
       containers:
-      - image: pimdarpacr.azurecr.io/mall-pay
+      - image: pimdarpacr.azurecr.io/mall-pay:v2.0
         name: mall-pay
         ports:
         - containerPort: 9006

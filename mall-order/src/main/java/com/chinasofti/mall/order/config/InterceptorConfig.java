@@ -14,6 +14,6 @@ public class InterceptorConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new com.chinasofti.mall.order.intercepter.UserLoginInterceptor())
 				.addPathPatterns("/**")
-				.excludePathPatterns("/orders/uoid/**");
+				.excludePathPatterns("/orders/uoid/**","/daprOrders/**","/cron/**");
 	}
 }
